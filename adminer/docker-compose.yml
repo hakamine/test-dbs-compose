@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - pg14_test-db-net
+      - mysql8_test-db-net
+
+networks:
+  pg14_test-db-net:
+    external: true
+  mysql8_test-db-net:
+    external: true
