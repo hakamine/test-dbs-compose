@@ -6,12 +6,17 @@ services:
     restart: always
     ports:
       - 8080:8080
-    networks:
-      - pg14_test-db-net
-      - mysql8_test-db-net
+    environment:
+      ADMINER_PASSWORD: "adminerpw"
+    # networks:
+      # - pg14_test-db-net
+      # - mysql8_test-db-net
+    volumes:
+      - ../dbfiles:/dbfiles
+      - ./plugins-enabled:/var/www/html/plugins-enabled
 
-networks:
-  pg14_test-db-net:
-    external: true
-  mysql8_test-db-net:
-    external: true
+# networks:
+  # pg14_test-db-net:
+  #   external: true
+  # mysql8_test-db-net:
+  #   external: true

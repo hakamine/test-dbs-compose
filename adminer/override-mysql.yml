@@ -1,0 +1,2 @@
+include:
+  - ../mysql8/docker-compose.yml
